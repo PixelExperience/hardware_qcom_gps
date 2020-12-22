@@ -1,4 +1,5 @@
 #set TARGET_USES_HARDWARE_QCOM_GPS to false to disable this project.
+ifneq ($(PRODUCT_PLATFORM_SOD),true)
 
 ifeq ($(TARGET_USES_HARDWARE_QCOM_GPS),)
   ifneq ($(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)),)
@@ -47,3 +48,4 @@ ifeq ($(TARGET_USES_HARDWARE_QCOM_GPS),true)
 
   endif #BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE
 endif
+endif #PRODUCT_PLATFORM_SOD
